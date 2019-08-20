@@ -15,7 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('myhome', function () {
+    return view('pages.myhome');
+});
+
 Auth::routes();
 
-//controller akak hadhala aken call karnwa function index kiyn aka Homecontrller kiyana ake 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
